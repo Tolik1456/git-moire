@@ -30,11 +30,10 @@
         <div class="pics__wrapper" v-if="product.colors[currentColor].gallery">
           <img width="570" height="570" :src="product.colors[currentColor].gallery[0].file.url" :alt="product.title">
           <div class="flex">
-          <div class="img__product pics__link" v-for="image, index in product.colors.length" :key="index">
-            <div class="flex" v-if="product.colors[index].gallery">
+          <div class="img__product" v-for="image, index in product.colors.length" :key="index">
+            <div class="img_m" v-if="product.colors[index].gallery">
               <img :src="product.colors[index].gallery[0].file.url" :alt="product.title"
-                @click="changeColor(index, product.colors[index].color.id)"
-                :class="{ 'pics__link--current': currentColor === index }">
+                @click="changeColor(index, product.colors[index].color.id)">
             </div>
           </div>
         </div>
