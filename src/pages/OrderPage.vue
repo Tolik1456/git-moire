@@ -79,7 +79,7 @@
 
           <div class="cart__total">
             <p v-if="deliveryCount">Доставка: <b>{{ deliveryCount }} ₽</b></p>
-            <p>Итого: <b>{{ products.length }}</b> товара на сумму <b>{{ totalPrice | numberFormat }} ₽</b></p>
+            <p>Итого: <b>{{ products.length }}</b> товара на сумму <b>{{ Number(totalPrice)+Number(deliveryCount) | numberFormat }} ₽</b></p>
           </div>
 
           <button class="cart__button button button--primery" type="submit" :disabled="loadOrder">

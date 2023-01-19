@@ -29,13 +29,15 @@
       <div class="item__pics pics">
         <div class="pics__wrapper" v-if="product.colors[currentColor].gallery">
           <img width="570" height="570" :src="product.colors[currentColor].gallery[0].file.url" :alt="product.title">
+          <div class="flex">
           <div class="img__product pics__link" v-for="image, index in product.colors.length" :key="index">
-            <div v-if="product.colors[index].gallery">
+            <div class="flex" v-if="product.colors[index].gallery">
               <img :src="product.colors[index].gallery[0].file.url" :alt="product.title"
                 @click="changeColor(index, product.colors[index].color.id)"
                 :class="{ 'pics__link--current': currentColor === index }">
             </div>
           </div>
+        </div>
         </div>
         <span v-else>Нет изображения</span>
       </div>
